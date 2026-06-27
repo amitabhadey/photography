@@ -13,7 +13,7 @@ If you know a tad about tech and love taking pictures then this open-source proj
 all your creations without effort. And not just that, with this you need not pay a single dime to host your website as
 it's hosted by GitHub for __free__.
 
-**Just follow the below steps and your website would be live in no time:**
+**Just follow the below steps and your website would be live in ◊no time:**
 
 1. Fork this repo by hitting the `Fork` button at the top right corner.
 2. Enable github pages from the repo settings.

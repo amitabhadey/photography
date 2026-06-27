@@ -1,17 +1,17 @@
 # Base configs
-baseurl: "https://photography.rampatra.com"
-# baseurl: "" # Comment the above line and uncomment this to test the website locally
+baseurl: ""
+# baseurl: "https://photography.rampatra.com" # Uncomment this line to publish with the live baseurl
 image_fulls_loc: "/images/fulls"
 image_thumbs_loc: "/images/thumbs"
 google_analytics: "UA-46465113-2"
 
 # UI configs
-title: "Photography by Ram Patra"
+title: "AD Visuals"
 subtitle: "See the world through my eyes!"
 author: "Ram Patra"
 header:
- title: "Photography"
- subtitle: "by Ram Patra"
+ title: "AD Visuals"
+ subtitle: ""
 footer:
  name: "Hey there, my name is Ram"
  bio: "I am a software developer and a tech aficionado. Love making teeny tiny apps solving tiny problems in life and now learning photography."
@@ -28,3 +28,8 @@ social_urls:
 # Configure which exif data to display
 # Tag is the actual exif tag, icon is a fontawesome icon. Use JSON notation without line breaks
 exif: '[{"tag": "Model", "icon": "fa fa-camera-retro"}, {"tag": "FNumber", "icon": "far fa-dot-circle"}, {"tag": "ExposureTime", "icon": "far fa-clock"}, {"tag": "ISOSpeedRatings", "icon": "fa fa-info-circle"}]'
+
+# Prevent local dependency directories from being processed as site content.
+exclude:
+  - adey-virtual-env
+  - .bundle

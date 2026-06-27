@@ -169,8 +169,7 @@
 	});
   
 	// Main.
-	var $main = $("#main"),
-		exifDatas = {};
+	var $main = $("#main");
   
 	// Thumbs.
 	$main.children(".thumb").each(function () {
@@ -194,29 +193,11 @@
   
 	  // Hide original img.
 	  $image_img.hide();
-
-	  // EXIF data
-	  $image_img[0].addEventListener("load", function() {
-		EXIF.getData($image_img[0], function () {
-			exifDatas[$image_img.data('name')] = getExifDataMarkup(this);
-		});
-	  });
 	});
   
 	// Poptrox.
 	$main.poptrox({
 	  baseZIndex: 20000,
-	  caption: function ($a) {
-		var $image_img = $a.children('img');
-		var data = exifDatas[$image_img.data('name')];
-		if (data === undefined) {
-			// EXIF data					
-			EXIF.getData($image_img[0], function () {
-				data = exifDatas[$image_img.data('name')] = getExifDataMarkup(this);
-			});
-		}
-		return data !== undefined ? '<p>' + data + '</p>' : ' ';
-	},
 	  fadeSpeed: 300,
 	  onPopupClose: function () {
 		$body.removeClass("modal-active");
@@ -231,7 +212,7 @@
 	  popupSpeed: 300,
 	  popupWidth: 150,
 	  selector: ".thumb > a.image",
-	  usePopupCaption: true,
+	  usePopupCaption: false,
 	  usePopupCloser: true,
 	  usePopupDefaultStyling: false,
 	  usePopupForceClose: true,
@@ -248,19 +229,5 @@
 	breakpoints.on(">xsmall", function () {
 	  $main[0]._poptrox.windowMargin = 50;
 	});
-  
-	function getExifDataMarkup(img) {
-		var exif = $('#main').data('exif');
-		var template = '';
-
-		for (var current in exif) {
-			var current_data = exif[current];
-			var exif_data = EXIF.getTag(img, current_data['tag']);
-			if (typeof exif_data !== "undefined") {
-				template += '<i class="' + current_data['icon'] + '" aria-hidden="true"></i> ' + exif_data + '&nbsp;&nbsp;';
-			}
-		}
-		return template;
-	}
 
   })(jQuery);
