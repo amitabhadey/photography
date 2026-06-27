@@ -1,6 +1,6 @@
 # Base configs
-baseurl: ""
-# baseurl: "https://photography.rampatra.com" # Uncomment this line to publish with the live baseurl
+url: "https://amitabhadey.github.io"
+baseurl: "/photography"
 image_fulls_loc: "/images/fulls"
 image_thumbs_loc: "/images/thumbs"
 google_analytics: "UA-46465113-2"
